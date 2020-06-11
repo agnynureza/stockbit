@@ -1,0 +1,24 @@
+mode: set
+stockbit/movie-service/movie/endpoint.go:23.60,24.77 1 0
+stockbit/movie-service/movie/endpoint.go:24.77,28.3 3 0
+stockbit/movie-service/movie/grpc.go:14.95,16.16 2 0
+stockbit/movie-service/movie/grpc.go:19.2,19.33 1 0
+stockbit/movie-service/movie/grpc.go:16.16,18.3 1 0
+stockbit/movie-service/movie/grpc.go:22.81,30.2 1 0
+stockbit/movie-service/movie/repository.go:17.41,21.2 1 0
+stockbit/movie-service/movie/repository.go:23.106,28.23 4 0
+stockbit/movie-service/movie/repository.go:32.2,38.68 5 0
+stockbit/movie-service/movie/repository.go:42.2,42.22 1 0
+stockbit/movie-service/movie/repository.go:28.23,30.3 1 0
+stockbit/movie-service/movie/repository.go:38.68,40.3 1 0
+stockbit/movie-service/movie/repository_mock.go:13.118,16.9 3 1
+stockbit/movie-service/movie/repository_mock.go:20.2,20.28 1 1
+stockbit/movie-service/movie/repository_mock.go:16.9,18.3 1 1
+stockbit/movie-service/movie/service.go:15.57,20.2 1 1
+stockbit/movie-service/movie/service.go:22.98,25.16 3 1
+stockbit/movie-service/movie/service.go:30.2,30.18 1 1
+stockbit/movie-service/movie/service.go:25.16,28.3 2 1
+stockbit/movie-service/movie/encode_decode.go:11.83,14.16 3 0
+stockbit/movie-service/movie/encode_decode.go:17.2,21.8 1 0
+stockbit/movie-service/movie/encode_decode.go:14.16,16.3 1 0
+stockbit/movie-service/movie/encode_decode.go:24.85,27.2 2 0

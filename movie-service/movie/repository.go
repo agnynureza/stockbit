@@ -2,6 +2,7 @@ package movie
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"time"
@@ -19,7 +20,9 @@ func NewRepo(log log.Logger) Repository {
 	}
 }
 
-func (r *repository) GetListMoviesAPI(ctx context.Context, req SearchMoviesRequest) (*http.Response, error) {
+func (r *repository) GetListMoviesAPI(ctx context.Context, req SearchMoviesRequest) (interface{}, error) {
+	var response interface{}
+
 	uri := fmt.Sprintf("http://www.omdbapi.com/?apikey=%s&s=%s&page=%s", req.ApiKey, req.Search, req.Page)
 	request, errRequest := http.NewRequest(http.MethodGet, uri, nil)
 	if errRequest != nil {
@@ -32,5 +35,9 @@ func (r *repository) GetListMoviesAPI(ctx context.Context, req SearchMoviesReque
 	cli := &http.Client{Timeout: time.Second}
 	resp, err := cli.Do(request)
 
-	return resp, err
+	if err = json.NewDecoder(resp.Body).Decode(&response); err != nil {
+		return nil, err
+	}
+
+	return response, err
 }

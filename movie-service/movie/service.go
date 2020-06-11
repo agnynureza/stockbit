@@ -2,12 +2,9 @@ package movie
 
 import (
 	"context"
-	"encoding/json"
-	"net/http"
-
-	"github.com/go-kit/kit/log/level"
 
 	"github.com/go-kit/kit/log"
+	"github.com/go-kit/kit/log/level"
 )
 
 type service struct {
@@ -30,20 +27,5 @@ func (s service) SearchMovies(ctx context.Context, req SearchMoviesRequest) (int
 		return nil, err
 	}
 
-	movies, err := s.GetMoviesListApiResponse(resp)
-	if err != nil {
-		level.Error(logger).Log("err", err)
-		return nil, err
-	}
-	return movies, nil
-}
-
-func (s service) GetMoviesListApiResponse(r *http.Response) (interface{}, error) {
-	var response interface{}
-
-	errDecode := json.NewDecoder(r.Body).Decode(&response)
-	if errDecode != nil {
-		return response, errDecode
-	}
-	return response, nil
+	return resp, nil
 }
