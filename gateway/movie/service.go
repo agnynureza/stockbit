@@ -13,12 +13,12 @@ func GetSearchMovie(ctx *gin.Context) {
 	var searchword = ctx.Request.URL.Query()["searchword"]
 
 	if len(apikey) < 1 {
-		ctx.JSON(http.StatusBadRequest, gin.H{"Error": "Url Params apikey is required"})
+		ctx.JSON(http.StatusBadRequest, gin.H{"Error": "No API key provided."})
 		return
 	}
 
 	if len(searchword) < 1 {
-		ctx.JSON(http.StatusBadRequest, gin.H{"Error": "Url Params searchword is required"})
+		ctx.JSON(http.StatusBadRequest, gin.H{"Error": "Something went wrong."})
 		return
 	}
 
@@ -33,5 +33,5 @@ func GetSearchMovie(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusOK, gin.H{"Result": result})
+	ctx.JSON(http.StatusOK, result)
 }
