@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/protobuf/any.proto";
+
+message Request {
+	string  ApiKey = 1; 
+	string  Search = 2; 
+	string  Page   = 3; 
+}
+
+message Response { 
+    google.protobuf.Any result = 1; 
+}
+
+service MoviesService {
+  rpc SearchMovies(Request) returns (Response);
+}
